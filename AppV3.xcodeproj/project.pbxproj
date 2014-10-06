@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F776423E19E217D20009C397 /* NewsCellTableViewCell.m */; };
+		F776424719E22A5D0009C397 /* classy_fabric.png in Resources */ = {isa = PBXBuildFile; fileRef = F776424119E22A5D0009C397 /* classy_fabric.png */; };
+		F776424819E22A5D0009C397 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = F776424219E22A5D0009C397 /* PlaceHolder.png */; };
+		F776424919E22A5D0009C397 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = F776424319E22A5D0009C397 /* Player.png */; };
+		F776424A19E22A5D0009C397 /* tabletennis.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F776424419E22A5D0009C397 /* tabletennis.jpeg */; };
+		F776424B19E22A5D0009C397 /* TableTennis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F776424519E22A5D0009C397 /* TableTennis.jpg */; };
+		F776424C19E22A5D0009C397 /* tabletennis92p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F776424619E22A5D0009C397 /* tabletennis92p.jpg */; };
 		F7BAFA5B19D8EC0400E49ABC /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAFA5419D8EC0400E49ABC /* MyLocation.m */; };
 		F7BAFA5C19D8EC0400E49ABC /* NewsArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAFA5619D8EC0400E49ABC /* NewsArticle.m */; };
 		F7BAFA5D19D8EC0400E49ABC /* TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAFA5819D8EC0400E49ABC /* TTPlayer.m */; };
@@ -41,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F776423D19E217D20009C397 /* NewsCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCellTableViewCell.h; sourceTree = "<group>"; };
+		F776423E19E217D20009C397 /* NewsCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCellTableViewCell.m; sourceTree = "<group>"; };
+		F776424119E22A5D0009C397 /* classy_fabric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classy_fabric.png; sourceTree = "<group>"; };
+		F776424219E22A5D0009C397 /* PlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceHolder.png; sourceTree = "<group>"; };
+		F776424319E22A5D0009C397 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		F776424419E22A5D0009C397 /* tabletennis.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tabletennis.jpeg; sourceTree = "<group>"; };
+		F776424519E22A5D0009C397 /* TableTennis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TableTennis.jpg; sourceTree = "<group>"; };
+		F776424619E22A5D0009C397 /* tabletennis92p.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tabletennis92p.jpg; sourceTree = "<group>"; };
 		F7BAFA5319D8EC0400E49ABC /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
 		F7BAFA5419D8EC0400E49ABC /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
 		F7BAFA5519D8EC0400E49ABC /* NewsArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticle.h; sourceTree = "<group>"; };
@@ -113,6 +128,28 @@
 				F7F0184E19D8E5220001B121 /* NewsArticlesViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F776423C19E217B00009C397 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F776423D19E217D20009C397 /* NewsCellTableViewCell.h */,
+				F776423E19E217D20009C397 /* NewsCellTableViewCell.m */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		F776424019E22A250009C397 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F776424119E22A5D0009C397 /* classy_fabric.png */,
+				F776424219E22A5D0009C397 /* PlaceHolder.png */,
+				F776424319E22A5D0009C397 /* Player.png */,
+				F776424419E22A5D0009C397 /* tabletennis.jpeg */,
+				F776424519E22A5D0009C397 /* TableTennis.jpg */,
+				F776424619E22A5D0009C397 /* tabletennis92p.jpg */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		F7BAFA5119D8EBAC00E49ABC /* StoryBoards */ = {
@@ -228,6 +265,7 @@
 		F7F0184519D8E5220001B121 /* AppV3 */ = {
 			isa = PBXGroup;
 			children = (
+				F776423C19E217B00009C397 /* CustomViews */,
 				F7BAFA6419D8EC8400E49ABC /* Frameworks */,
 				F7BAFA5F19D8EC4900E49ABC /* Facades */,
 				F7BAFA5219D8EBD000E49ABC /* Models */,
@@ -243,6 +281,7 @@
 		F7F0184619D8E5220001B121 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F776424019E22A250009C397 /* Resources */,
 				F7F0185319D8E5220001B121 /* Images.xcassets */,
 				F7F0184719D8E5220001B121 /* Info.plist */,
 				F7F0184819D8E5220001B121 /* main.m */,
@@ -349,8 +388,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7F0185219D8E5220001B121 /* Main.storyboard in Resources */,
+				F776424719E22A5D0009C397 /* classy_fabric.png in Resources */,
+				F776424919E22A5D0009C397 /* Player.png in Resources */,
+				F776424C19E22A5D0009C397 /* tabletennis92p.jpg in Resources */,
 				F7F0185719D8E5220001B121 /* LaunchScreen.xib in Resources */,
+				F776424819E22A5D0009C397 /* PlaceHolder.png in Resources */,
 				F7F0185419D8E5220001B121 /* Images.xcassets in Resources */,
+				F776424A19E22A5D0009C397 /* tabletennis.jpeg in Resources */,
+				F776424B19E22A5D0009C397 /* TableTennis.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +415,7 @@
 			files = (
 				F7F0184F19D8E5220001B121 /* NewsArticlesViewController.m in Sources */,
 				F7BAFA8119D8F2B000E49ABC /* TableTennisRSSV2Delegate.m in Sources */,
+				F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */,
 				F7F0184C19D8E5220001B121 /* AppDelegate.m in Sources */,
 				F7BAFA6319D8EC5B00E49ABC /* TableTennisInformationService.m in Sources */,
 				F7BAFA8419D8F2C300E49ABC /* TableTennisRSSBaseReader.m in Sources */,

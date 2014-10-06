@@ -7,15 +7,15 @@
 //
 
 #import "NewsArticlesViewController.h"
-#import "TableTennisInformationServiceDelegate.h"
-#import "TableTennisInformationService.h"
-#import "TTTournament.h"
 #import "NewsArticleDelegate.h"
 #import "NewsArticleReader.h"
 #import "TableTennisNewsArticleReader.h"
 #import "NewsArticle.h"
+#import "NewsCellTableViewCell.h"
 
-@interface NewsArticlesViewController ()<TableTennisInformationServiceDelegate,NewsArticleDelegate>
+@interface NewsArticlesViewController ()<NewsArticleDelegate, UITableViewDataSource, UITableViewDelegate>
+    @property (weak, nonatomic) IBOutlet UITableView *articles;
+    @property (strong, nonatomic) NSMutableArray *articlesList;
 @end
 
 @implementation NewsArticlesViewController
@@ -24,31 +24,50 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    TableTennisInformationService *ttSvc = [[TableTennisInformationService alloc] init];
-    ttSvc.dataDelegate = self;
-    //[ttSvc getLatestTornaments];
+    self.articlesList = [[NSMutableArray alloc] initWithCapacity:50];
     TableTennisNewsArticleReader *reader= [[TableTennisNewsArticleReader alloc] initWithReaderURL:url];
     reader.newsArticleDelegate =self;
     [reader readNewsArticles];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Table View Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.articlesList count];
 }
 
--(void) didRecieveTableTennisTournamentInformation:(NSArray *) data  andError:(NSError  *) error{
-    [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        TTTournament *tournament = (TTTournament *)obj;
-        NSLog(@"Tournament %@ ", tournament.tournmentName);
-    }];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NewsCellTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newsArticleCell"];
+    NewsArticle *newsArticle = self.articlesList[indexPath.row];
+    [newsCell showData:newsArticle];
+    return newsCell;
 }
+
+
+#pragma mark - Data Delegate Methods
 
 -(void) didRecieveNewsArticle:(NSArray *) newsArticles andError:(NSError *) error{
-    [newsArticles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NewsArticle *newsArticle = (NewsArticle *) obj;
-        NSLog(@"News Article %@", newsArticle.title);
-    }];
+    
+    if(!error)
+    {
+        [self.articlesList addObjectsFromArray:newsArticles];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Data Loaded");
+            [self.articles reloadData];
+        });
+    }
+    else{
+        
+        NSLog(@"Failed to Retrieve %@", error);
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Table Tennis News"
+                                                            message:@"Failed to retrieve news Articles"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil,
+                                  nil];
+        [alertView show];
+    }
 }
 
 @end
