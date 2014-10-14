@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
 @property (weak, nonatomic) IBOutlet UILabel *headingLbl;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTxt;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLbl;
 
 -(void) showData:(NewsArticle *) newsArticle;
 @end
