@@ -25,6 +25,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSURL *urlToLoad = [NSURL URLWithString:self.newsarticle.link];
+    //NSURL *urlToLoad = [NSURL URLWithString:@"http://google.com"];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:urlToLoad]];
+}
+
 /*
 #pragma mark - Navigation
 

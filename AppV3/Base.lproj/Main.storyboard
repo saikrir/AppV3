@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="141" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-Kp-iIZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="141" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-Kp-iIZ">
                                 <rect key="frame" x="0.0" y="-2" width="320" height="562"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsArticleCell" rowHeight="141" id="GgX-ms-vSq" customClass="NewsCellTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="newsArticleCell" rowHeight="141" id="GgX-ms-vSq" customClass="NewsCellTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GgX-ms-vSq" id="7Xv-g3-Af3">
@@ -100,7 +100,7 @@
                                             <outlet property="descriptionTxt" destination="D9v-Hn-Ai3" id="LAe-z2-FmC"/>
                                             <outlet property="headingLbl" destination="TSK-WF-ew2" id="4Br-s9-L0H"/>
                                             <outlet property="thumbnail" destination="3ca-Or-RkT" id="P1A-cW-duq"/>
-                                            <segue destination="jQm-6F-qZn" kind="modal" id="VJf-ww-84d"/>
+                                            <segue destination="jQm-6F-qZn" kind="push" identifier="webArticle" id="VJf-ww-84d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="747" y="332"/>
         </scene>
-        <!--New Article Web View Controller-->
+        <!--Web Article-->
         <scene sceneID="dNl-gt-3Iy">
             <objects>
-                <viewController id="jQm-6F-qZn" customClass="NewArticleWebViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jQm-6F-qZn" customClass="NewArticleWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wug-3C-yWr"/>
                         <viewControllerLayoutGuide type="bottom" id="KGc-Cx-ZbB"/>
@@ -143,21 +143,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-tp-XRe">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="568"/>
+                            <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" suppressesIncrementalRendering="YES" paginationMode="leftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="Dqo-d4-Vmr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="rU7-tp-XRe" secondAttribute="centerY" constant="8" id="3ix-EL-86i"/>
-                            <constraint firstItem="rU7-tp-XRe" firstAttribute="leading" secondItem="WFZ-TT-kcv" secondAttribute="leadingMargin" constant="-16" id="Bro-BO-lp9"/>
-                            <constraint firstAttribute="centerX" secondItem="rU7-tp-XRe" secondAttribute="centerX" id="Ry0-Wd-E4W"/>
-                            <constraint firstItem="rU7-tp-XRe" firstAttribute="top" secondItem="wug-3C-yWr" secondAttribute="bottom" constant="-28" id="hJK-ra-xru"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Web Article" id="W0z-di-AJK">
+                        <barButtonItem key="backBarButtonItem" title="News" id="jbN-7M-sRF"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="webView" destination="rU7-tp-XRe" id="hBS-ic-aXa"/>
+                        <outlet property="webView" destination="Dqo-d4-Vmr" id="OrP-Zg-Yv3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOm-Rs-No5" userLabel="First Responder" sceneMemberID="firstResponder"/>

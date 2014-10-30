@@ -12,6 +12,7 @@
 #import "TableTennisNewsArticleReader.h"
 #import "NewsArticle.h"
 #import "NewsCellTableViewCell.h"
+#import "NewArticleWebViewController.h"
 
 @interface NewsArticlesViewController ()<NewsArticleDelegate, UITableViewDataSource, UITableViewDelegate>
     @property (weak, nonatomic) IBOutlet UITableView *articles;
@@ -31,6 +32,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     [reader readNewsArticles];
     self.articles.delegate = self;
     self.articles.dataSource = self;
+    [self.articles setAllowsSelection:YES];
     [self.activityIndicator startAnimating];
 }
 
@@ -51,12 +53,11 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"Prepare for segue called");
+    NewArticleWebViewController *viewController = [segue destinationViewController];
+    NewsArticle *custObject = [self.articlesList objectAtIndex:[self.articles indexPathForSelectedRow].row];
+    viewController.newsarticle = custObject;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"didSelectRowAIndex Called");
-}
 
 #pragma mark - Data Delegate Methods
 

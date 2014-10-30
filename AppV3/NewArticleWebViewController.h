@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewsArticle.h"
 
 @interface NewArticleWebViewController : UIViewController
+
+@property (nonatomic, strong) NewsArticle *newsarticle;
 
 @end
