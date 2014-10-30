@@ -67,7 +67,7 @@ qualifiedName:(NSString *)qName
             currentArticle.link = elementText;
         }
         else if ([@"description" isEqualToString:elementName] && currentArticle){
-            currentArticle.newsDescription = elementText;
+            currentArticle.newsDescription = [self filterHTMLCharacters:elementText];
         }
         else if ([@"a10:updated" isEqualToString:elementName]){
             
@@ -93,5 +93,23 @@ qualifiedName:(NSString *)qName
     [elementText appendString:string];
 }
 
+
+-(NSString *) filterHTMLCharacters:(NSString *) description{
+    NSError *error = nil;
+
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"style=\".+;\"" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSString *modifiedString = [regex stringByReplacingMatchesInString:description options:0 range:NSMakeRange(0, [description length]) withTemplate:@""];
+    
+    regex = [NSRegularExpression regularExpressionWithPattern:@"</?[a-z ]+/?>" options:NSRegularExpressionCaseInsensitive error:&error];
+
+    modifiedString = [regex stringByReplacingMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@""];
+    
+    regex = [NSRegularExpression regularExpressionWithPattern:@"&[a-z]+;" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    modifiedString = [regex stringByReplacingMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@""];
+    
+    return modifiedString;
+}
 
 @end

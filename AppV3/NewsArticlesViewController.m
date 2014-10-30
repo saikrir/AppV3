@@ -15,6 +15,7 @@
 
 @interface NewsArticlesViewController ()<NewsArticleDelegate, UITableViewDataSource, UITableViewDelegate>
     @property (weak, nonatomic) IBOutlet UITableView *articles;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
     @property (strong, nonatomic) NSMutableArray *articlesList;
 @end
 
@@ -28,6 +29,9 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     TableTennisNewsArticleReader *reader= [[TableTennisNewsArticleReader alloc] initWithReaderURL:url];
     reader.newsArticleDelegate =self;
     [reader readNewsArticles];
+    self.articles.delegate = self;
+    self.articles.dataSource = self;
+    [self.activityIndicator startAnimating];
 }
 
 #pragma mark - Table View Methods
@@ -45,6 +49,15 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 }
 
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"Prepare for segue called");
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"didSelectRowAIndex Called");
+}
+
 #pragma mark - Data Delegate Methods
 
 -(void) didRecieveNewsArticle:(NSArray *) newsArticles andError:(NSError *) error{
@@ -55,6 +68,7 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Data Loaded");
             [self.articles reloadData];
+            [self.activityIndicator stopAnimating];
         });
     }
     else{
@@ -69,5 +83,6 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
         [alertView show];
     }
 }
+
 
 @end

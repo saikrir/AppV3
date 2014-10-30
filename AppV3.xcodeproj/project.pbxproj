@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F75CAB5919ECB80C00C8AAA4 /* NewArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75CAB5819ECB80C00C8AAA4 /* NewArticleWebViewController.m */; };
 		F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F776423E19E217D20009C397 /* NewsCellTableViewCell.m */; };
 		F776424719E22A5D0009C397 /* classy_fabric.png in Resources */ = {isa = PBXBuildFile; fileRef = F776424119E22A5D0009C397 /* classy_fabric.png */; };
 		F776424819E22A5D0009C397 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = F776424219E22A5D0009C397 /* PlaceHolder.png */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F75CAB5719ECB80C00C8AAA4 /* NewArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleWebViewController.h; sourceTree = "<group>"; };
+		F75CAB5819ECB80C00C8AAA4 /* NewArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArticleWebViewController.m; sourceTree = "<group>"; };
 		F776423D19E217D20009C397 /* NewsCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCellTableViewCell.h; sourceTree = "<group>"; };
 		F776423E19E217D20009C397 /* NewsCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCellTableViewCell.m; sourceTree = "<group>"; };
 		F776424119E22A5D0009C397 /* classy_fabric.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classy_fabric.png; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 			children = (
 				F7F0184D19D8E5220001B121 /* NewsArticlesViewController.h */,
 				F7F0184E19D8E5220001B121 /* NewsArticlesViewController.m */,
+				F75CAB5719ECB80C00C8AAA4 /* NewArticleWebViewController.h */,
+				F75CAB5819ECB80C00C8AAA4 /* NewArticleWebViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				F7BAFA6C19D8ECA000E49ABC /* TFHpple.m in Sources */,
 				F7BAFA5D19D8EC0400E49ABC /* TTPlayer.m in Sources */,
 				F7BAFA5B19D8EC0400E49ABC /* MyLocation.m in Sources */,
+				F75CAB5919ECB80C00C8AAA4 /* NewArticleWebViewController.m in Sources */,
 				F7BAFA5C19D8EC0400E49ABC /* NewsArticle.m in Sources */,
 				F7F0184919D8E5220001B121 /* main.m in Sources */,
 			);
