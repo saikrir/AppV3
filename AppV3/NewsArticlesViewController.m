@@ -21,7 +21,8 @@
 @end
 
 @implementation NewsArticlesViewController
-NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=";
+//NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=";
+NSString *const url= @"http://www.teamusa.org/News?rss=1";
 
 
 - (void)viewDidLoad {

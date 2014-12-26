@@ -19,7 +19,6 @@
 @implementation NewsCellTableViewCell
 
 - (void)awakeFromNib {
-    
     _sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
      _thumbnailSession = [NSURLSession sessionWithConfiguration:_sessionConfiguration];
     _dateFormatter = [[NSDateFormatter alloc] init];

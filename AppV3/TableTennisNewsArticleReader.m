@@ -30,7 +30,7 @@
         self.readerURL = readerURL;
         self.newsArticles = [[NSMutableArray alloc] init];
         self.sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        //self.sessionConfiguration.timeoutIntervalForRequest = 30;
+        self.sessionConfiguration.timeoutIntervalForRequest = 30;
         self.urlSession = [NSURLSession sessionWithConfiguration:self.sessionConfiguration];
         
         NSLog(@"Session Configuration Setup!");
@@ -50,7 +50,6 @@
     NSString *urlWithParams = [self.readerURL stringByAppendingString: [page stringValue]];
     NSURL *rssURL = [NSURL URLWithString:urlWithParams];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:rssURL];
-    NSLog(@"Request is %@", urlRequest);
     TableTennisRSSBaseReader *delegate = [[TableTennisRSSV2Delegate alloc] init];
     
     NSURLSessionDataTask *rssXMLTask = [self.urlSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *theData, NSURLResponse *response, NSError *error)
