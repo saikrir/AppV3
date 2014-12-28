@@ -9,25 +9,22 @@
         <!--News Articles-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="NewsArticlesViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewsArticlesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kIQ-EH-mpe">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kIQ-EH-mpe">
                                 <rect key="frame" x="0.0" y="266" width="320" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="220" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-Kp-iIZ">
-                                <rect key="frame" x="0.0" y="-2" width="320" height="562"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="220" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-Kp-iIZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="562" id="U52-3I-de4"/>
-                                </constraints>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -91,6 +88,7 @@
                                             <outlet property="dateLbl" destination="1yt-Sm-0w2" id="Ud9-iL-c7C"/>
                                             <outlet property="headingLbl" destination="9sA-KQ-wiB" id="6uQ-0z-L0a"/>
                                             <outlet property="thumbnail" destination="vWo-JV-IE8" id="CpJ-7D-m9a"/>
+                                            <segue destination="n6y-Zf-Rpo" kind="push" id="vl6-UX-3vX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -98,15 +96,15 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="TOe-Kp-iIZ" firstAttribute="trailing" secondItem="kIQ-EH-mpe" secondAttribute="trailing" id="Eec-ah-HS4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kIQ-EH-mpe" secondAttribute="bottom" constant="152" id="MJR-nF-JcX"/>
-                            <constraint firstItem="kIQ-EH-mpe" firstAttribute="trailing" secondItem="TOe-Kp-iIZ" secondAttribute="trailing" id="Pxg-qR-VOJ"/>
-                            <constraint firstItem="TOe-Kp-iIZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-2" id="f6h-sm-1Uu"/>
-                            <constraint firstAttribute="trailing" secondItem="TOe-Kp-iIZ" secondAttribute="trailing" id="hkd-DG-Njh"/>
-                            <constraint firstItem="kIQ-EH-mpe" firstAttribute="leading" secondItem="TOe-Kp-iIZ" secondAttribute="leading" id="u7M-HS-JbV"/>
-                            <constraint firstItem="TOe-Kp-iIZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xEi-0r-e92"/>
+                            <constraint firstItem="TOe-Kp-iIZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MJz-zG-ImJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TOe-Kp-iIZ" secondAttribute="trailing" id="NbX-t5-7rf"/>
+                            <constraint firstAttribute="bottom" secondItem="TOe-Kp-iIZ" secondAttribute="bottom" id="TJb-1Q-NLF"/>
+                            <constraint firstItem="TOe-Kp-iIZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hjf-Fe-dYh"/>
+                            <constraint firstItem="TOe-Kp-iIZ" firstAttribute="leading" secondItem="kIQ-EH-mpe" secondAttribute="leading" id="qPB-sC-ekW"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="News Articles" id="RAP-Ku-AsH"/>
                     <connections>
                         <outlet property="activityIndicator" destination="kIQ-EH-mpe" id="jz8-Wi-Mhu"/>
@@ -117,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="747" y="332"/>
         </scene>
-        <!--View Controller-->
+        <!--News Article-->
         <scene sceneID="eaK-h3-J8m">
             <objects>
-                <viewController id="n6y-Zf-Rpo" sceneMemberID="viewController">
+                <viewController id="n6y-Zf-Rpo" customClass="NewsArticleViewDetailController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBV-94-7LM"/>
                         <viewControllerLayoutGuide type="bottom" id="0cl-qK-BhO"/>
@@ -141,6 +139,9 @@
                             <constraint firstAttribute="trailing" secondItem="f4f-sN-azm" secondAttribute="trailing" id="vtv-Q9-CIB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="News Article" id="G68-JB-hbY">
+                        <barButtonItem key="backBarButtonItem" title="News" id="9Ty-OL-1Cg"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsh-1P-Nzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
