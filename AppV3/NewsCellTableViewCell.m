@@ -44,12 +44,17 @@
     self.headingLbl.text = newsArticle.title;
     self.dateLbl.text = [@"Published on : " stringByAppendingString:[self.dateFormatter stringFromDate:newsArticle.pubDate]];
     
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:newsArticle.imageURL ]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[newsArticle.imageURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ]];
     NSURLSessionDataTask *thumbnailTask = [self.thumbnailSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIImage *image = [UIImage imageWithData:data];
-            self.thumbnail.image = image;
-        });
+        if(!error){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage *image = [UIImage imageWithData:data];
+                self.thumbnail.image = image;
+            });
+        }
+        else{
+            NSLog(@"Error Downloading Image %@", error);
+        }
     }];
     [thumbnailTask resume];
 }
