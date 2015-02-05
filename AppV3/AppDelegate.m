@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LeftNavViewController.h"
+#import "NewsArticleViewDetailController.h"
+#import "ContainerViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    LeftNavViewController *leftNavViewController =  [mainStoryBoard instantiateViewControllerWithIdentifier:@"leftNavViewController"];
+    NewsArticleViewDetailController *newsArticlesViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"newsArticlesViewController"];
+    
+    ContainerViewController *containerViewController = [[ContainerViewController alloc] initWith:leftNavViewController mainViewController:newsArticlesViewController gap:100];
+    
+    self.window.rootViewController = containerViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -21,8 +21,8 @@
 @end
 
 @implementation NewsArticlesViewController
-//NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=";
-NSString *const url= @"http://www.teamusa.org/News?rss=1";
+NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=1";
+//NSString *const url= @"http://www.teamusa.org/News?rss=1";
 
 
 - (void)viewDidLoad {
@@ -56,7 +56,7 @@ NSString *const url= @"http://www.teamusa.org/News?rss=1";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NewArticleWebViewController *viewController = [segue destinationViewController];
     NewsArticle *custObject = [self.articlesList objectAtIndex:[self.articles indexPathForSelectedRow].row];
-    //viewController.newsarticle = custObject;
+    viewController.newsarticle = custObject;
 }
 
 

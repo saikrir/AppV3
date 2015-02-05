@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F726BF5B1A82F38000EFF6BD /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F726BF5A1A82F38000EFF6BD /* ContainerViewController.m */; };
+		F726BF5E1A82FF0000EFF6BD /* LeftNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */; };
+		F726BF671A8311C700EFF6BD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F726BF651A8311C700EFF6BD /* menu.png */; };
+		F726BF681A8311C700EFF6BD /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F726BF661A8311C700EFF6BD /* menu@2x.png */; };
 		F750E7951A4F8C060059CA13 /* NewsArticleViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F750E7941A4F8C060059CA13 /* NewsArticleViewDetailController.m */; };
 		F75CAB5919ECB80C00C8AAA4 /* NewArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75CAB5819ECB80C00C8AAA4 /* NewArticleWebViewController.m */; };
 		F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F776423E19E217D20009C397 /* NewsCellTableViewCell.m */; };
@@ -50,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F726BF591A82F38000EFF6BD /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		F726BF5A1A82F38000EFF6BD /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		F726BF5C1A82FF0000EFF6BD /* LeftNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftNavViewController.h; sourceTree = "<group>"; };
+		F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftNavViewController.m; sourceTree = "<group>"; };
+		F726BF651A8311C700EFF6BD /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		F726BF661A8311C700EFF6BD /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		F750E7931A4F8C060059CA13 /* NewsArticleViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleViewDetailController.h; sourceTree = "<group>"; };
 		F750E7941A4F8C060059CA13 /* NewsArticleViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticleViewDetailController.m; sourceTree = "<group>"; };
 		F75CAB5719ECB80C00C8AAA4 /* NewArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleWebViewController.h; sourceTree = "<group>"; };
@@ -130,12 +140,16 @@
 		F72D8C2A19D8E9E400CD8045 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F726BF591A82F38000EFF6BD /* ContainerViewController.h */,
+				F726BF5A1A82F38000EFF6BD /* ContainerViewController.m */,
 				F7F0184D19D8E5220001B121 /* NewsArticlesViewController.h */,
 				F7F0184E19D8E5220001B121 /* NewsArticlesViewController.m */,
 				F75CAB5719ECB80C00C8AAA4 /* NewArticleWebViewController.h */,
 				F75CAB5819ECB80C00C8AAA4 /* NewArticleWebViewController.m */,
 				F750E7931A4F8C060059CA13 /* NewsArticleViewDetailController.h */,
 				F750E7941A4F8C060059CA13 /* NewsArticleViewDetailController.m */,
+				F726BF5C1A82FF0000EFF6BD /* LeftNavViewController.h */,
+				F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +166,8 @@
 		F776424019E22A250009C397 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F726BF651A8311C700EFF6BD /* menu.png */,
+				F726BF661A8311C700EFF6BD /* menu@2x.png */,
 				F776424119E22A5D0009C397 /* classy_fabric.png */,
 				F776424219E22A5D0009C397 /* PlaceHolder.png */,
 				F776424319E22A5D0009C397 /* Player.png */,
@@ -397,12 +413,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F726BF681A8311C700EFF6BD /* menu@2x.png in Resources */,
 				F7F0185219D8E5220001B121 /* Main.storyboard in Resources */,
 				F776424719E22A5D0009C397 /* classy_fabric.png in Resources */,
 				F776424919E22A5D0009C397 /* Player.png in Resources */,
 				F776424C19E22A5D0009C397 /* tabletennis92p.jpg in Resources */,
 				F7F0185719D8E5220001B121 /* LaunchScreen.xib in Resources */,
 				F776424819E22A5D0009C397 /* PlaceHolder.png in Resources */,
+				F726BF671A8311C700EFF6BD /* menu.png in Resources */,
 				F7F0185419D8E5220001B121 /* Images.xcassets in Resources */,
 				F776424A19E22A5D0009C397 /* tabletennis.jpeg in Resources */,
 				F776424B19E22A5D0009C397 /* TableTennis.jpg in Resources */,
@@ -428,6 +446,7 @@
 				F7BAFA8119D8F2B000E49ABC /* TableTennisRSSV2Delegate.m in Sources */,
 				F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */,
 				F7F0184C19D8E5220001B121 /* AppDelegate.m in Sources */,
+				F726BF5E1A82FF0000EFF6BD /* LeftNavViewController.m in Sources */,
 				F7BAFA6319D8EC5B00E49ABC /* TableTennisInformationService.m in Sources */,
 				F7BAFA8419D8F2C300E49ABC /* TableTennisRSSBaseReader.m in Sources */,
 				F7BAFA7D19D8F25700E49ABC /* TableTennisNewsArticleReader.m in Sources */,
@@ -436,6 +455,7 @@
 				F7BAFA6D19D8ECA000E49ABC /* TFHppleElement.m in Sources */,
 				F7BAFA7819D8F17800E49ABC /* LocationInfoService.m in Sources */,
 				F7BAFA6C19D8ECA000E49ABC /* TFHpple.m in Sources */,
+				F726BF5B1A82F38000EFF6BD /* ContainerViewController.m in Sources */,
 				F7BAFA5D19D8EC0400E49ABC /* TTPlayer.m in Sources */,
 				F7BAFA5B19D8EC0400E49ABC /* MyLocation.m in Sources */,
 				F75CAB5919ECB80C00C8AAA4 /* NewArticleWebViewController.m in Sources */,
