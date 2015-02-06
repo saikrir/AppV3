@@ -68,7 +68,7 @@
     CGFloat x = (self.view.bounds.size.width - self.gap);
     CGPoint offset = CGPointMake(x, self.scrollView.contentOffset.y);
     
-    [self.scrollView setContentOffset:offset animated:YES];
+    [self.scrollView setContentOffset:offset animated:NO];
 
 }
 
