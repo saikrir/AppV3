@@ -30,6 +30,24 @@
     self.window.rootViewController = containerViewController;
     [self.window makeKeyAndVisible];
     
+    
+  
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:50.0/255.0 green:63.0/255.0 blue:86.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    // Navigation bar buttons appearance
     return YES;
 }
 

@@ -16,7 +16,7 @@
 
 @interface NewsArticlesViewController ()<NewsArticleDelegate, UITableViewDataSource, UITableViewDelegate>
     @property (weak, nonatomic) IBOutlet UITableView *articles;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+    @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
     @property (strong, nonatomic) NSMutableArray *articlesList;
 @end
 
@@ -35,6 +35,9 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     self.articles.dataSource = self;
     [self.articles setAllowsSelection:YES];
     [self.activityIndicator startAnimating];
+
+    self.articles.separatorColor = [UIColor clearColor];
+
 }
 
 #pragma mark - Table View Methods
@@ -86,5 +89,9 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     }
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 
 @end
