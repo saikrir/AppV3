@@ -126,9 +126,10 @@
     UIButton *button = (UIButton *) sender;
     if(self.loadedViewControllerIndex == button.tag) return;
     
-    UIViewController *viewController = [self viewControllerFor: button.tag];
+    UIViewController<MenuHandler> *viewController = (UIViewController<MenuHandler> *)[self viewControllerFor: button.tag];
     if(viewController){
         [self.mainViewController setViewControllers:@[viewController] animated:YES];
+        [viewController setMenuDelegate:self];
         self.loadedViewControllerIndex = button.tag;
     }
     

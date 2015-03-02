@@ -10,7 +10,7 @@
 #import "NavigationHandler.h"
 
 
-@interface NewsArticlesViewController : UIViewController
+@interface NewsArticlesViewController : UIViewController<MenuHandler>
 
 @property (nonatomic,weak) id<MenuToggleDelegate> menuDelegate;
 

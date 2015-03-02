@@ -11,6 +11,7 @@
 		F726BF5E1A82FF0000EFF6BD /* LeftNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */; };
 		F726BF671A8311C700EFF6BD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F726BF651A8311C700EFF6BD /* menu.png */; };
 		F726BF681A8311C700EFF6BD /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F726BF661A8311C700EFF6BD /* menu@2x.png */; };
+		F74614A51AA405FC00383160 /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F74614A41AA405FC00383160 /* PlayerTableViewCell.m */; };
 		F750E7951A4F8C060059CA13 /* NewsArticleViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F750E7941A4F8C060059CA13 /* NewsArticleViewDetailController.m */; };
 		F75CAB5919ECB80C00C8AAA4 /* NewArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75CAB5819ECB80C00C8AAA4 /* NewArticleWebViewController.m */; };
 		F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F776423E19E217D20009C397 /* NewsCellTableViewCell.m */; };
@@ -61,6 +62,8 @@
 		F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftNavViewController.m; sourceTree = "<group>"; };
 		F726BF651A8311C700EFF6BD /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		F726BF661A8311C700EFF6BD /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		F74614A31AA405FC00383160 /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
+		F74614A41AA405FC00383160 /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
 		F750E7931A4F8C060059CA13 /* NewsArticleViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleViewDetailController.h; sourceTree = "<group>"; };
 		F750E7941A4F8C060059CA13 /* NewsArticleViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticleViewDetailController.m; sourceTree = "<group>"; };
 		F75CAB5719ECB80C00C8AAA4 /* NewArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewArticleWebViewController.h; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 			children = (
 				F776423D19E217D20009C397 /* NewsCellTableViewCell.h */,
 				F776423E19E217D20009C397 /* NewsCellTableViewCell.m */,
+				F74614A31AA405FC00383160 /* PlayerTableViewCell.h */,
+				F74614A41AA405FC00383160 /* PlayerTableViewCell.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				F77F36FD1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m in Sources */,
 				F750E7951A4F8C060059CA13 /* NewsArticleViewDetailController.m in Sources */,
 				F7BAFA8119D8F2B000E49ABC /* TableTennisRSSV2Delegate.m in Sources */,
+				F74614A51AA405FC00383160 /* PlayerTableViewCell.m in Sources */,
 				F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */,
 				F7F0184C19D8E5220001B121 /* AppDelegate.m in Sources */,
 				F726BF5E1A82FF0000EFF6BD /* LeftNavViewController.m in Sources */,

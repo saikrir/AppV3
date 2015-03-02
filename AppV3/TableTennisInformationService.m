@@ -202,7 +202,7 @@
                                         player.wins = tdElement.text;
                                         break;
                                     case 7:
-                                        player.toralPlayed= tdElement.text;
+                                        player.totalPlayed= tdElement.text;
                                         break;
                                     default:
                                         break;

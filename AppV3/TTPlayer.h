@@ -18,6 +18,6 @@
 @property (nonatomic,strong) NSString *lastPlay;
 @property (nonatomic,strong) NSString *rank;
 @property (nonatomic,strong) NSString *wins;
-@property (nonatomic,strong) NSString *toralPlayed;
+@property (nonatomic,strong) NSString *totalPlayed;
 
 @end
