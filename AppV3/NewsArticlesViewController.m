@@ -12,7 +12,6 @@
 #import "TableTennisNewsArticleReader.h"
 #import "NewsArticle.h"
 #import "NewsCellTableViewCell.h"
-#import "NewArticleWebViewController.h"
 
 @interface NewsArticlesViewController ()<NewsArticleDelegate, UITableViewDataSource, UITableViewDelegate>
     @property (weak, nonatomic) IBOutlet UITableView *articles;
@@ -34,12 +33,13 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     self.articles.delegate = self;
     self.articles.dataSource = self;
     [self.articles setAllowsSelection:YES];
-    [self.activityIndicator startAnimating];
-
     self.articles.separatorColor = [UIColor clearColor];
-
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.activityIndicator startAnimating];
+}
 #pragma mark - Table View Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -61,12 +61,6 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NewArticleWebViewController *viewController = [segue destinationViewController];
-    NewsArticle *custObject = [self.articlesList objectAtIndex:[self.articles indexPathForSelectedRow].row];
-    viewController.newsarticle = custObject;
-}
-
 
 #pragma mark - Data Delegate Methods
 
@@ -76,7 +70,6 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     {
         [self.articlesList addObjectsFromArray:newsArticles];
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Data Loaded");
             [self.articles reloadData];
             [self.activityIndicator stopAnimating];
         });
