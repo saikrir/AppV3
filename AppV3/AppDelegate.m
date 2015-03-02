@@ -8,10 +8,14 @@
 
 #import "AppDelegate.h"
 #import "LeftNavViewController.h"
-#import "NewsArticleViewDetailController.h"
+#import "NewsArticlesViewController.h"
 #import "ContainerViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic,strong) ContainerViewController *containerViewController;
+@property (nonatomic,strong) UINavigationController *leftNavigationController;
+@property (nonatomic,strong) UINavigationController *mainViewController;
 
 @end
 
@@ -23,13 +27,20 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     LeftNavViewController *leftNavViewController =  [mainStoryBoard instantiateViewControllerWithIdentifier:@"leftNavViewController"];
-    NewsArticleViewDetailController *newsArticlesViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"newsArticlesViewController"];
+     self.leftNavigationController = [[UINavigationController alloc] initWithRootViewController:leftNavViewController];
     
-    ContainerViewController *containerViewController = [[ContainerViewController alloc] initWith:leftNavViewController mainViewController:newsArticlesViewController gap:100];
     
-    self.window.rootViewController = containerViewController;
+    NewsArticlesViewController *newsArticlesViewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"newsArticlesViewController"];
+    self.mainViewController = [[UINavigationController alloc] initWithRootViewController:newsArticlesViewController];
+    
+    self.containerViewController = [[ContainerViewController alloc] initWith:self.leftNavigationController mainViewController:self.mainViewController gap:100];
+    
+    newsArticlesViewController.menuDelegate = self.containerViewController;
+    leftNavViewController.navigationDelegate = self.containerViewController;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.containerViewController;
     [self.window makeKeyAndVisible];
-    
     
   
     //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:50.0/255.0 green:63.0/255.0 blue:86.0/255.0 alpha:1.0]];
@@ -46,8 +57,6 @@
                                                            [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
-    // Navigation bar buttons appearance
     return YES;
 }
 

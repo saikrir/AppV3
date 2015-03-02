@@ -8,19 +8,22 @@
 
 #import "ContainerViewController.h"
 
-@interface ContainerViewController ()
+@interface ContainerViewController () <MenuToggleDelegate,NavigationHandler>
 
-    @property (nonatomic,weak) UIViewController *leftViewController;
-    @property (nonatomic,weak) UIViewController *mainViewController;
+    @property (nonatomic,weak) UINavigationController *leftViewController;
+    @property (nonatomic,weak) UINavigationController *mainViewController;
     @property (nonatomic,strong) UIScrollView *scrollView;
+    @property (nonatomic,strong) NSDictionary *viewIndexes;
     @property (nonatomic,assign) NSInteger gap;
+    @property (assign) BOOL firstTime;
+    @property (assign) NSUInteger loadedViewControllerIndex;
 
 @end
 
 @implementation ContainerViewController
 
--(instancetype) initWith:(UIViewController *) leftViewController
-      mainViewController:(UIViewController *)  mainViewController
+-(instancetype) initWith:(UINavigationController *) leftViewController
+      mainViewController:(UINavigationController *)  mainViewController
                      gap:(NSInteger ) gap{
     
     self = [super init];
@@ -48,8 +51,11 @@
     
     [self addSubViews];
     [self setupConstraints];
+    [self populateViewIndexes];
     
     self.scrollView.pagingEnabled = YES;
+    self.firstTime = YES;
+    self.loadedViewControllerIndex = 0;
 }
 
 -(void) addSubViews{
@@ -65,11 +71,25 @@
 }
 
 -(void) viewDidLayoutSubviews{
+    [self closeMenu];
+}
+
+-(void) openMenu{
+    CGPoint offset = CGPointMake(0, self.scrollView.contentOffset.y);
+    [self.scrollView setContentOffset:offset animated:YES];
+}
+
+
+-(void) closeMenu{
     CGFloat x = (self.view.bounds.size.width - self.gap);
     CGPoint offset = CGPointMake(x, self.scrollView.contentOffset.y);
-    
-    [self.scrollView setContentOffset:offset animated:NO];
+    [self.scrollView setContentOffset:offset animated: !self.firstTime];
+    self.firstTime = NO;
+}
 
+-(BOOL) isMenuOpen{
+    CGPoint scrollviewOffset = self.scrollView.contentOffset;
+    return (scrollviewOffset.x == 0);
 }
 
 -(void) setupConstraints{
@@ -88,9 +108,36 @@
     
     NSArray *mainVwVConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[mainView(==containerView)]|" options:0 metrics:0 views:viewsDefs];
     [self.view addConstraints:mainVwVConstraints];
+}
+
+-(void) populateViewIndexes{
+    self.viewIndexes = @{
+                         @0 : @"newsArticlesViewController",
+                         @1: @"playerSearchViewController"
+                        };
+}
+
+- (void)didTapMenuButton:(UIViewController *)controller{
+    self.isMenuOpen? [self closeMenu]: [self openMenu];
+}
+
+-(void) handleNavigation:(id) sender{
+    
+    UIButton *button = (UIButton *) sender;
+    if(self.loadedViewControllerIndex == button.tag) return;
+    
+    UIViewController *viewController = [self viewControllerFor: button.tag];
+    if(viewController){
+        [self.mainViewController setViewControllers:@[viewController] animated:YES];
+        self.loadedViewControllerIndex = button.tag;
+    }
     
 }
 
-
+-(UIViewController *) viewControllerFor:(NSUInteger) viewIndex{
+    NSString *storyboardId = self.viewIndexes[@(viewIndex)];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return [mainStoryBoard instantiateViewControllerWithIdentifier:storyboardId];
+}
 
 @end

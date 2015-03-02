@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigationHandler.h"
 
 @interface LeftNavViewController : UIViewController
+
+@property (nonatomic,weak) id<NavigationHandler> navigationDelegate;
 
 @end

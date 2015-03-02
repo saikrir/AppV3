@@ -54,6 +54,11 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
     return newsCell;
 }
 
+- (IBAction)handleMenuToggle:(id)sender {
+    if([self.menuDelegate respondsToSelector:@selector(didTapMenuButton:)]){
+       [self.menuDelegate didTapMenuButton:self];   
+    }
+}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -93,5 +98,6 @@ NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=10
 {
     return UIStatusBarStyleLightContent;
 }
+
 
 @end

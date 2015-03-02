@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigationHandler.h"
 
 @interface ContainerViewController : UIViewController
 
 
--(instancetype) initWith:(UIViewController *) leftViewController
-                mainViewController:(UIViewController *)
+-(instancetype) initWith:(UINavigationController *) leftViewController
+                mainViewController:(UINavigationController *)
                 mainViewController gap:(NSInteger ) gap;
 
 

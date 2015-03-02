@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kFG-cj-OKV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -9,7 +9,7 @@
         <!--Left Nav View Controller-->
         <scene sceneID="w84-na-lBo">
             <objects>
-                <viewController id="OCP-nT-6Jb" customClass="LeftNavViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leftNavViewController" id="OCP-nT-6Jb" customClass="LeftNavViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CJn-sY-xhm"/>
                         <viewControllerLayoutGuide type="bottom" id="4ac-uQ-Qj4"/>
@@ -25,38 +25,53 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadNewsArticles:" destination="OCP-nT-6Jb" eventType="touchUpInside" id="Zs8-Mo-ZKk"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFw-jg-SVf">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFw-jg-SVf">
                                 <rect key="frame" x="113" y="158" width="95" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Player Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadPlayerSearch:" destination="OCP-nT-6Jb" eventType="touchUpInside" id="nmO-WR-Juv"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ2-Hr-nAu">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ2-Hr-nAu">
                                 <rect key="frame" x="134" y="204" width="52" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Ratings">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadRatings:" destination="OCP-nT-6Jb" eventType="touchUpInside" id="4rg-fS-L4y"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDj-YV-OMi">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDj-YV-OMi">
                                 <rect key="frame" x="140" y="252" width="40" height="26"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Clubs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadClubs:" destination="OCP-nT-6Jb" eventType="touchUpInside" id="3Zw-XD-KdP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1k-H9-Alx">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1k-H9-Alx">
                                 <rect key="frame" x="116" y="307" width="89" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Merchendise">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadMerchendise:" destination="OCP-nT-6Jb" eventType="touchUpInside" id="eoh-Ja-2iX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -65,12 +80,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brr-AZ-I8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931" y="1055"/>
+            <point key="canvasLocation" x="902" y="332"/>
+        </scene>
+        <!--Player Search-->
+        <scene sceneID="MPH-UL-2L9">
+            <objects>
+                <viewController storyboardIdentifier="playerSearchViewController" title="Player Search" id="QTF-jk-3u2" customClass="PlayerSearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wm2-Gg-kdQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tGL-z4-u37"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dki-Rd-KSH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACh-7w-pcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="331"/>
         </scene>
         <!--News Articles-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewsArticlesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsArticlesViewController" id="BYZ-38-t0r" customClass="NewsArticlesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -79,12 +112,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kIQ-EH-mpe">
-                                <rect key="frame" x="0.0" y="266" width="320" height="37"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kIQ-EH-mpe" userLabel="Large White Activity Indicator">
+                                <rect key="frame" x="150" y="304" width="20" height="20"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="164" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-VA-ezU">
-                                <rect key="frame" x="0.0" y="64" width="320" height="509"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="164" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-VA-ezU">
+                                <rect key="frame" x="0.0" y="59" width="320" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,17 +205,20 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kIQ-EH-mpe" secondAttribute="trailing" id="Jna-rP-T7V"/>
+                            <constraint firstItem="kIQ-EH-mpe" firstAttribute="centerX" secondItem="L7z-VA-ezU" secondAttribute="centerX" id="FSx-2V-T4X"/>
                             <constraint firstAttribute="centerY" secondItem="L7z-VA-ezU" secondAttribute="centerY" constant="-34.5" id="KW7-mc-yJz"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kIQ-EH-mpe" secondAttribute="bottom" constant="265" id="MJR-nF-JcX"/>
                             <constraint firstItem="L7z-VA-ezU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dwt-yh-K8z"/>
                             <constraint firstAttribute="centerX" secondItem="L7z-VA-ezU" secondAttribute="centerX" id="esn-xY-mia"/>
                             <constraint firstItem="L7z-VA-ezU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jh1-3r-WhM"/>
-                            <constraint firstItem="kIQ-EH-mpe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tCq-ET-z03"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kIQ-EH-mpe" secondAttribute="bottom" constant="244" id="lu9-Zp-JYm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News Articles" id="RAP-Ku-AsH">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="FGg-1h-542"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="FGg-1h-542">
+                            <connections>
+                                <action selector="handleMenuToggle:" destination="BYZ-38-t0r" id="tUp-OO-4if"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -193,76 +229,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="399" y="332"/>
-        </scene>
-        <!--News Article-->
-        <scene sceneID="eaK-h3-J8m">
-            <objects>
-                <viewController id="n6y-Zf-Rpo" customClass="NewsArticleViewDetailController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cBV-94-7LM"/>
-                        <viewControllerLayoutGuide type="bottom" id="0cl-qK-BhO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="x52-zf-wMt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4f-sN-azm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="f4f-sN-azm" firstAttribute="leading" secondItem="x52-zf-wMt" secondAttribute="leading" id="OZA-gp-acJ"/>
-                            <constraint firstItem="f4f-sN-azm" firstAttribute="top" secondItem="x52-zf-wMt" secondAttribute="top" id="QBe-QB-Jzn"/>
-                            <constraint firstAttribute="bottom" secondItem="f4f-sN-azm" secondAttribute="bottom" id="grb-gg-RBh"/>
-                            <constraint firstAttribute="trailing" secondItem="f4f-sN-azm" secondAttribute="trailing" id="vtv-Q9-CIB"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="News Article" id="G68-JB-hbY">
-                        <barButtonItem key="backBarButtonItem" title="News" id="9Ty-OL-1Cg"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nsh-1P-Nzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="954" y="332"/>
-        </scene>
-        <!--Table Tennis News-->
-        <scene sceneID="6My-qs-Xs7">
-            <objects>
-                <navigationController storyboardIdentifier="newsArticlesViewController" hidesBottomBarWhenPushed="YES" id="kFG-cj-OKV" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Table Tennis News" id="yUI-3Y-ERL"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6un-wr-9C4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dWB-lN-gzi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C7L-Gl-M2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-111" y="332"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="W7G-7g-FrQ">
-            <objects>
-                <navigationController storyboardIdentifier="leftNavViewController" automaticallyAdjustsScrollViewInsets="NO" id="IkM-FG-c96" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rIa-Yo-UFn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="OCP-nT-6Jb" kind="relationship" relationship="rootViewController" id="Fgb-2C-zbc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g3x-bi-rZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="399" y="1055"/>
         </scene>
     </scenes>
     <resources>

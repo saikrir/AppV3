@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NavigationHandler.h"
+
 
 @interface NewsArticlesViewController : UIViewController
 
+@property (nonatomic,weak) id<MenuToggleDelegate> menuDelegate;
 
 @end
 

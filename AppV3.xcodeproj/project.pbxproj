@@ -20,6 +20,7 @@
 		F776424A19E22A5D0009C397 /* tabletennis.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F776424419E22A5D0009C397 /* tabletennis.jpeg */; };
 		F776424B19E22A5D0009C397 /* TableTennis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F776424519E22A5D0009C397 /* TableTennis.jpg */; };
 		F776424C19E22A5D0009C397 /* tabletennis92p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F776424619E22A5D0009C397 /* tabletennis92p.jpg */; };
+		F77F36FD1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77F36FC1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m */; };
 		F7BAFA5B19D8EC0400E49ABC /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAFA5419D8EC0400E49ABC /* MyLocation.m */; };
 		F7BAFA5C19D8EC0400E49ABC /* NewsArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAFA5619D8EC0400E49ABC /* NewsArticle.m */; };
 		F7BAFA5D19D8EC0400E49ABC /* TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BAFA5819D8EC0400E49ABC /* TTPlayer.m */; };
@@ -72,6 +73,9 @@
 		F776424419E22A5D0009C397 /* tabletennis.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tabletennis.jpeg; sourceTree = "<group>"; };
 		F776424519E22A5D0009C397 /* TableTennis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TableTennis.jpg; sourceTree = "<group>"; };
 		F776424619E22A5D0009C397 /* tabletennis92p.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tabletennis92p.jpg; sourceTree = "<group>"; };
+		F77F36FA1AA3D80800C8EAF4 /* NavigationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationHandler.h; sourceTree = "<group>"; };
+		F77F36FB1AA3DB9B00C8EAF4 /* PlayerSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSearchViewController.h; sourceTree = "<group>"; };
+		F77F36FC1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerSearchViewController.m; sourceTree = "<group>"; };
 		F7BAFA5319D8EC0400E49ABC /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
 		F7BAFA5419D8EC0400E49ABC /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
 		F7BAFA5519D8EC0400E49ABC /* NewsArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticle.h; sourceTree = "<group>"; };
@@ -150,6 +154,9 @@
 				F750E7941A4F8C060059CA13 /* NewsArticleViewDetailController.m */,
 				F726BF5C1A82FF0000EFF6BD /* LeftNavViewController.h */,
 				F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */,
+				F77F36FA1AA3D80800C8EAF4 /* NavigationHandler.h */,
+				F77F36FB1AA3DB9B00C8EAF4 /* PlayerSearchViewController.h */,
+				F77F36FC1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -442,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7F0184F19D8E5220001B121 /* NewsArticlesViewController.m in Sources */,
+				F77F36FD1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m in Sources */,
 				F750E7951A4F8C060059CA13 /* NewsArticleViewDetailController.m in Sources */,
 				F7BAFA8119D8F2B000E49ABC /* TableTennisRSSV2Delegate.m in Sources */,
 				F776423F19E217D20009C397 /* NewsCellTableViewCell.m in Sources */,
