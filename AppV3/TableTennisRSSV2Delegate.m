@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.newsArticles = [[NSMutableArray alloc] init];
-        fields = @[@"title",@"guid",@"link",@"description",@"a10:updated", @"enclosure",@"category", @"a10:author"];
+        fields = @[@"title",@"guid",@"link",@"description",@"updated", @"enclosure",@"category", @"author", @"pubDate"];
         dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat  setDateFormat:@"yyyy-MM-dd"];
         [dateFormat setLenient:YES];
@@ -66,24 +66,28 @@ qualifiedName:(NSString *)qName
         else if ([@"link" isEqualToString:elementName]){
             currentArticle.link = elementText;
         }
-        else if ([@"description" isEqualToString:elementName] && currentArticle){
+        else if ([@"description" isEqualToString:qName] && currentArticle){
             currentArticle.newsDescription = [self filterHTMLCharacters:elementText];
+            if(!currentArticle.imageURL){
+                currentArticle.imageURL = [self imageURL:elementText];
+            }
         }
-        else if ([@"a10:updated" isEqualToString:elementName]){
+        else if ([@"updated" isEqualToString:qName] || [@"pubDate" isEqualToString:qName]){
             
             if([elementText length] > 0 ){
+                
                 NSRange range = [elementText rangeOfString:@"T"];
-                NSRange newRange = {0, range.location};
-                NSString *dateStr = [elementText substringWithRange:newRange];
-                currentArticle.pubDate = [dateFormat dateFromString:dateStr];
+                if(range.location != NSNotFound){
+                    NSRange newRange = {0, range.location};
+                    NSString *dateStr = [elementText substringWithRange:newRange];
+                    currentArticle.pubDate = [dateFormat dateFromString:dateStr];
+                }
+                else{
+                    dateFormat.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss Z";
+                    currentArticle.pubDate = [dateFormat dateFromString:elementText];
+                }
             }
             
-        }
-        else if([@"category" isEqualToString:elementName]){
-            //NSLog(@"Category TExt %@", elementText);
-        }
-        else if([@"a10:author" isEqualToString:elementName]){
-            //NSLog(@"Author %@", elementText);
         }
     }
 }
@@ -110,6 +114,21 @@ qualifiedName:(NSString *)qName
     modifiedString = [regex stringByReplacingMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@""];
     
     return modifiedString;
+}
+
+-(NSString *) imageURL:(NSString *) description{
+    
+    NSString *retURL = @"";
+    NSError *error = nil;
+    
+    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern:@"https?://[\\w\\./-]+\\.jpe?g" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSArray *match = [regex matchesInString:description options:0 range:NSMakeRange(0, [description length])];
+   
+    if(match && [match count] > 0 ){
+        retURL = [description substringWithRange:[match[0] range]];
+    }
+    
+    return retURL;
 }
 
 @end

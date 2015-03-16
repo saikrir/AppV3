@@ -84,7 +84,14 @@
     //[self addGradient];
     self.descriptionTxt.text = newsArticle.newsDescription;
     self.headingLbl.text = newsArticle.title;
-    self.dateLbl.text = [@"Published on : " stringByAppendingString:[self.dateFormatter stringFromDate:newsArticle.pubDate]];
+
+    NSString *formattedDate = @"N/A";
+    
+    if(newsArticle.pubDate){
+        formattedDate = [self.dateFormatter stringFromDate:newsArticle.pubDate];
+    }
+    
+    self.dateLbl.text = [@"Published on : " stringByAppendingString:formattedDate];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[newsArticle.imageURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] ]];
     NSURLSessionDataTask *thumbnailTask = [self.thumbnailSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -95,7 +102,7 @@
             });
         }
         else{
-            NSLog(@"Error Downloading Image %@", error);
+            NSLog(@"Error Downloading Image %@", newsArticle.imageURL);
         }
     }];
     [thumbnailTask resume];

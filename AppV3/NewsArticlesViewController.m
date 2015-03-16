@@ -20,9 +20,9 @@
 @end
 
 @implementation NewsArticlesViewController
-NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=1";
+//NSString *const url= @"http://www.teamusa.org/USA-Table-Tennis/Features?count=100&rss=1";
 //NSString *const url= @"http://www.teamusa.org/News?rss=1";
-
+NSString *const url = @"http://blog.paddlepalace.com/author/steve/feed/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
