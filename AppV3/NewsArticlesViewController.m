@@ -12,6 +12,7 @@
 #import "TableTennisNewsArticleReader.h"
 #import "NewsArticle.h"
 #import "NewsCellTableViewCell.h"
+#import "ArticleWebViewController.h"
 
 @interface NewsArticlesViewController ()<NewsArticleDelegate, UITableViewDataSource, UITableViewDelegate>
     @property (weak, nonatomic) IBOutlet UITableView *articles;
@@ -54,13 +55,19 @@ NSString *const url = @"http://blog.paddlepalace.com/author/steve/feed/";
     return newsCell;
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NewsCellTableViewCell *cell = sender;
+    ArticleWebViewController *articleVC= [segue destinationViewController];
+    articleVC.newsArticle = cell.newsArticle;
+}
+
+
 - (IBAction)handleMenuToggle:(id)sender {
     if([self.menuDelegate respondsToSelector:@selector(didTapMenuButton:)]){
        [self.menuDelegate didTapMenuButton:self];   
     }
 }
-
-
 
 #pragma mark - Data Delegate Methods
 

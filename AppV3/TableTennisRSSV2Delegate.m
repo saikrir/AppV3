@@ -17,7 +17,6 @@
         self.newsArticles = [[NSMutableArray alloc] init];
         fields = @[@"title",@"guid",@"link",@"description",@"updated", @"enclosure",@"category", @"author", @"pubDate"];
         dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat  setDateFormat:@"yyyy-MM-dd"];
         [dateFormat setLenient:YES];
     }
     return self;
@@ -67,27 +66,29 @@ qualifiedName:(NSString *)qName
             currentArticle.link = elementText;
         }
         else if ([@"description" isEqualToString:qName] && currentArticle){
-            currentArticle.newsDescription = [self filterHTMLCharacters:elementText];
             if(!currentArticle.imageURL){
                 currentArticle.imageURL = [self imageURL:elementText];
             }
+            currentArticle.newsDescription = [self filterHTMLCharacters:elementText];
         }
-        else if ([@"updated" isEqualToString:qName] || [@"pubDate" isEqualToString:qName]){
+        else if ([@"updated" isEqualToString:qName]){
             
             if([elementText length] > 0 ){
-                
+                [dateFormat  setDateFormat:@"yyyy-MM-dd"];
                 NSRange range = [elementText rangeOfString:@"T"];
                 if(range.location != NSNotFound){
                     NSRange newRange = {0, range.location};
                     NSString *dateStr = [elementText substringWithRange:newRange];
                     currentArticle.pubDate = [dateFormat dateFromString:dateStr];
                 }
-                else{
-                    dateFormat.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss Z";
-                    currentArticle.pubDate = [dateFormat dateFromString:elementText];
-                }
             }
             
+        }
+        else if([@"pubDate" isEqualToString:qName]){
+            if([elementText length] > 0 ){
+                dateFormat.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss Z";
+                currentArticle.pubDate = [dateFormat dateFromString:elementText];
+            }
         }
     }
 }
@@ -101,18 +102,9 @@ qualifiedName:(NSString *)qName
 -(NSString *) filterHTMLCharacters:(NSString *) description{
     NSError *error = nil;
 
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"style=\".+;\"" options:NSRegularExpressionCaseInsensitive error:&error];
-    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>" options:NSRegularExpressionCaseInsensitive error:&error];
     NSString *modifiedString = [regex stringByReplacingMatchesInString:description options:0 range:NSMakeRange(0, [description length]) withTemplate:@""];
-    
-    regex = [NSRegularExpression regularExpressionWithPattern:@"</?[a-z ]+/?>" options:NSRegularExpressionCaseInsensitive error:&error];
-
-    modifiedString = [regex stringByReplacingMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@""];
-    
-    regex = [NSRegularExpression regularExpressionWithPattern:@"&[a-z]+;" options:NSRegularExpressionCaseInsensitive error:&error];
-    
-    modifiedString = [regex stringByReplacingMatchesInString:modifiedString options:0 range:NSMakeRange(0, [modifiedString length]) withTemplate:@""];
-    
+    modifiedString = [modifiedString stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
     return modifiedString;
 }
 
@@ -121,13 +113,12 @@ qualifiedName:(NSString *)qName
     NSString *retURL = @"";
     NSError *error = nil;
     
-    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern:@"https?://[\\w\\./-]+\\.jpe?g" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *regex  = [NSRegularExpression regularExpressionWithPattern:@"https?://[\\w\\./-]+\\.(jpe?|pn)g" options:NSRegularExpressionCaseInsensitive error:&error];
     NSArray *match = [regex matchesInString:description options:0 range:NSMakeRange(0, [description length])];
    
     if(match && [match count] > 0 ){
         retURL = [description substringWithRange:[match[0] range]];
     }
-    
     return retURL;
 }
 

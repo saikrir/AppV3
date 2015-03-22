@@ -76,6 +76,7 @@
 
 -(void) showData:(NewsArticle *) newsArticle{
     
+    self.newsArticle = newsArticle;
     [self setupCell];
     self.thumbnail.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.thumbnail.layer.borderWidth = 0.3f;

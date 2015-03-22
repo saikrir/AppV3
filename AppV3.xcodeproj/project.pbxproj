@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F703A6731ABE72FC009E2CB4 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F703A6721ABE72FC009E2CB4 /* ArticleWebViewController.m */; };
 		F726BF5B1A82F38000EFF6BD /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F726BF5A1A82F38000EFF6BD /* ContainerViewController.m */; };
 		F726BF5E1A82FF0000EFF6BD /* LeftNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F726BF5D1A82FF0000EFF6BD /* LeftNavViewController.m */; };
 		F726BF671A8311C700EFF6BD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F726BF651A8311C700EFF6BD /* menu.png */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F703A6711ABE72FC009E2CB4 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
+		F703A6721ABE72FC009E2CB4 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		F726BF591A82F38000EFF6BD /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		F726BF5A1A82F38000EFF6BD /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		F726BF5C1A82FF0000EFF6BD /* LeftNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftNavViewController.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				F77F36FA1AA3D80800C8EAF4 /* NavigationHandler.h */,
 				F77F36FB1AA3DB9B00C8EAF4 /* PlayerSearchViewController.h */,
 				F77F36FC1AA3DB9B00C8EAF4 /* PlayerSearchViewController.m */,
+				F703A6711ABE72FC009E2CB4 /* ArticleWebViewController.h */,
+				F703A6721ABE72FC009E2CB4 /* ArticleWebViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				F726BF5E1A82FF0000EFF6BD /* LeftNavViewController.m in Sources */,
 				F7BAFA6319D8EC5B00E49ABC /* TableTennisInformationService.m in Sources */,
 				F7BAFA8419D8F2C300E49ABC /* TableTennisRSSBaseReader.m in Sources */,
+				F703A6731ABE72FC009E2CB4 /* ArticleWebViewController.m in Sources */,
 				F7BAFA7D19D8F25700E49ABC /* TableTennisNewsArticleReader.m in Sources */,
 				F7BAFA5E19D8EC0400E49ABC /* TTTournament.m in Sources */,
 				F7BAFA6E19D8ECA000E49ABC /* XPathQuery.m in Sources */,

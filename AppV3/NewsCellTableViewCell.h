@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTxt;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLbl;
+@property (weak, nonatomic) NewsArticle *newsArticle;
 
 -(void) showData:(NewsArticle *) newsArticle;
 @end
