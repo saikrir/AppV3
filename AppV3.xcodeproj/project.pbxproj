@@ -389,6 +389,11 @@
 					F7F0184219D8E5220001B121 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = MVZ7T525GG;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					F7F0185B19D8E5220001B121 = {
 						CreatedOnToolsVersion = 6.0.1;
